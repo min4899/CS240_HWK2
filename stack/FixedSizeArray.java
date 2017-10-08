@@ -1,7 +1,7 @@
 import java.util.EmptyStackException;
 
 /**
-   A fixed size array that implements STackInterface
+   A fixed size array that implements StackInterface.
    @author Minwoo Soh
 */
 public final class FixedSizeArray<T> implements StackInterface<T>

@@ -33,6 +33,7 @@ public class Demo
     stack1.pop();
     */
 
+    /*
     System.out.println("TESTING VECTOR STACK");
     Vector stack2 = new Vector(3);
     System.out.println("Created stack2 Vector");
@@ -59,6 +60,36 @@ public class Demo
     stack2.clear();
     stack2.push("hello");
     System.out.println(stack2.peek());
+    */
 
+    /*
+    System.out.println("TESTING LINKED DATA STACK");
+    LinkedData stack3 = new LinkedData();
+    System.out.println("Created stack 3 linked data");
+
+    System.out.println("Adding items");
+    stack3.push('a');
+    stack3.push('b');
+    stack3.push('c');
+
+    stack3.toArray();
+
+    System.out.println("Top item on stack is: " + stack3.peek());
+
+    System.out.println("Deleting top item on stack");
+    stack3.pop();
+    stack3.toArray();
+
+    System.out.println("Adding more items");
+    stack3.push('d');
+    stack3.push('e');
+    stack3.toArray();
+
+    stack3.clear();
+
+    stack3.peek();
+    */
+
+    
   }
 }
