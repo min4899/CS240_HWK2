@@ -30,9 +30,9 @@ public final class FixedSizeArray<T> implements StackInterface<T>
     }
     else
     {
-      //Bag is full
-      System.out.println("Maximum number of entries already stored."
-                          + "Cannot insert new entry.");
+      //Array is full
+      System.out.println("Maximum number of entries already stored. " +
+                         "Cannot insert new entry.");
     } // end if
   } // end push
 
@@ -50,7 +50,7 @@ public final class FixedSizeArray<T> implements StackInterface<T>
     else
     {
       item = stack[numberOfEntries-1]; // Setting item inside temp
-      stack[numberOfEntries-1] = null; // Removing item from bag
+      stack[numberOfEntries-1] = null; // Removing item from array
       numberOfEntries--; // Decrement item in stack count
       return item;
     } // end if

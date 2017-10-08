@@ -2,8 +2,10 @@ public class Demo
 {
   public static void main(String[] args)
   {
+    /*
+    System.out.println("TESTING FIXEDARRAY STACK");
     FixedSizeArray stack1 = new FixedSizeArray();
-    System.out.println("Created stack 1 FixedArray");
+    System.out.println("Created stack1 FixedArray");
 
     System.out.println("adding items");
     stack1.push('a');
@@ -29,5 +31,34 @@ public class Demo
     //System.out.println(stack1.peek());
 
     stack1.pop();
+    */
+
+    System.out.println("TESTING VECTOR STACK");
+    Vector stack2 = new Vector(3);
+    System.out.println("Created stack2 Vector");
+
+    System.out.println("Adding items");
+    stack2.push('a');
+    stack2.push('b');
+    stack2.push('c');
+    System.out.println("Added 3 items");
+
+    System.out.println(stack2.peek());
+
+    System.out.println("Adding 3 more objects");
+    stack2.push('d');
+    stack2.push('e');
+    stack2.push('f');
+
+    System.out.println(stack2.peek());
+
+    stack2.pop();
+
+    System.out.println(stack2.peek());
+
+    stack2.clear();
+    stack2.push("hello");
+    System.out.println(stack2.peek());
+
   }
 }
