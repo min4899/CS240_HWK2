@@ -59,11 +59,11 @@ public final class CircularArray<T> implements QueueInterface<T>
         front = (front + 1) % queue.length;
         count--;
       } // end if
-    }
+    } // end try
     catch(EmptyQueueException e)
     {
       System.out.println("Exception thrown: " + e);
-    } // end try
+    } // end catch
 
     return item;
   } // end dequeue
@@ -85,11 +85,11 @@ public final class CircularArray<T> implements QueueInterface<T>
       {
         item = queue[front];
       } // end if
-    }
+    } // end try
     catch(EmptyQueueException e)
     {
       System.out.println("Exception thrown: " + e);
-    } // end try
+    } // end catch
 
     return item;
   } // end getFront
@@ -116,7 +116,7 @@ public final class CircularArray<T> implements QueueInterface<T>
   {
     String result = "[";
 
-    for (int i = 0; i < queue.length; i++ )
+    for (int i = 0; i < queue.length; i++)
     {
       result += queue[i] + " ";       // Concat next list element
     } // end for

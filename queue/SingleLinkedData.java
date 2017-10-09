@@ -82,11 +82,11 @@ public final class SingleLinkedData<T> implements QueueInterface<T>
           numberOfEntries--;
         } // end if
       } // end if
-    }
+    } // end try
     catch(EmptyQueueException e)
     {
       System.out.println("Exception thrown: " + e);
-    } // end try
+    } // end catch
 
     return item;
   } // end dequeue
@@ -168,7 +168,7 @@ public final class SingleLinkedData<T> implements QueueInterface<T>
 
     /** Creates a node that points to another node.
         @param dataPortion  The data that will be stored in the node.
-        @param nextNode  The next node that will be referenced. */
+        @param prevNode  The previous node that will be referenced. */
     private Node(T dataPortion, Node prevNode)
     {
       data = dataPortion;

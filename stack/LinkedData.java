@@ -9,7 +9,7 @@ public final class LinkedData<T> implements StackInterface<T>
   private Node previousNode;
   private int numberOfEntries;
 
-  /** Creates an empty LinkedData object with an empty first node. */
+  /** Creates an empty LinkedData stack. */
   public LinkedData()
   {
     previousNode = null;
@@ -111,7 +111,7 @@ public final class LinkedData<T> implements StackInterface<T>
 
     /** Creates a node that points to another node.
         @param dataPortion  The data that will be stored in the node.
-        @param nextNode  The next node that will be referenced. */
+        @param prevNode  The previous node that will be referenced. */
     private Node(T dataPortion, Node prevNode)
     {
       data = dataPortion;
