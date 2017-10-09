@@ -2,6 +2,7 @@ public class Demo
 {
   public static void main(String[] args)
   {
+    /*
     System.out.println("TESTING CIRCULAR ARRAY");
     CircularArray queue1 = new CircularArray();
     System.out.println("Created new queue 1 Circular Array");
@@ -40,5 +41,43 @@ public class Demo
     queue1.clear();
     System.out.println(queue1.toString());
     queue1.dequeue();
+    */
+
+    /*
+    System.out.println("TESTING SINGLE LINKED DATA");
+    SingleLinkedData queue2 = new SingleLinkedData();
+    System.out.println("Created new queue 2 SingleLinkedData");
+
+    System.out.println("Adding items");
+    queue2.enqueue('a');
+    queue2.enqueue('b');
+    queue2.enqueue('c');
+    queue2.enqueue('d');
+    queue2.enqueue('e');
+    System.out.println("Added 5 items");
+    queue2.toArray();
+
+    System.out.println(queue2.getFront());
+
+    System.out.println("Removing first in queue: " + queue2.dequeue());
+    System.out.println("New first item in list is: " +queue2.getFront());
+    System.out.println("Removing first in queue: " + queue2.dequeue());
+    System.out.println("New first item in list is: " +queue2.getFront());
+    System.out.println("Removing first in queue: " + queue2.dequeue());
+    System.out.println("New first item in list is: " +queue2.getFront());
+    System.out.println("Removing first in queue: " + queue2.dequeue());
+    System.out.println("New first item in list is: " +queue2.getFront());
+
+    System.out.println("Clearing queue");
+    queue2.clear();
+    queue2.dequeue();
+
+    queue2.enqueue("hello");
+    queue2.enqueue("everyone");
+    queue2.enqueue("lol");
+    queue2.toArray();
+    */
+
+    
   }
 }

@@ -1,0 +1,178 @@
+/**
+   A single linked data queue that implements QueueInterface.
+   @author Minwoo Soh
+*/
+public final class SingleLinkedData<T> implements QueueInterface<T>
+{
+  private Node firstNode;
+  private Node lastNode;
+  private Node rootNode;
+  private int numberOfEntries;
+
+  /** Creates an empty SingleLinkedData object with no nodes. */
+  public SingleLinkedData()
+  {
+    firstNode = null;
+    lastNode = null;
+    rootNode = null;
+    numberOfEntries = 0;
+  } // end default constructor
+
+  /** Adds a new entry to the back of this queue.
+      @param newEntry  An object to be added. */
+  public void enqueue(T newEntry)
+  {
+    Node newNode = new Node(newEntry);
+
+    if(isEmpty())
+    {
+      lastNode = newNode;
+      firstNode = newNode;
+      numberOfEntries++;
+    }
+    else
+    {
+      newNode.prev = lastNode;
+      lastNode = newNode;
+      numberOfEntries++;
+    } // end if
+  } // end enqueue
+
+  /** Removes and returns the entry at the front of this queue.
+      @return  The object at the front of the queue.
+      @throws  EmptyQueueException if the queue is empty before the operation. */
+  public T dequeue()
+  {
+    T item = null;
+
+    try
+    {
+      if(isEmpty())
+      {
+        throw new EmptyQueueException();
+      }
+      else
+      {
+        if(numberOfEntries == 1) // Only 1 entry in queue.
+        {
+          item = firstNode.data;
+          firstNode = null;
+          lastNode = null;
+          numberOfEntries--;
+        }
+        else if(numberOfEntries == 2)
+        {
+          item = firstNode.data;
+          lastNode.prev = null; // 2nd node points to null.
+          firstNode = lastNode; // Sets firstNode as the one after it.
+          numberOfEntries--;
+        }
+        else
+        {
+          item = firstNode.data;
+          Node currentNode = lastNode;
+          // Goes through queue until currentNode is equal to the 2nd node.
+          for(int i = 1; i < numberOfEntries - 1; i++)
+          {
+            // Goes through end to the 2nd item in the queue.
+            currentNode = currentNode.prev;
+          } // end for
+          currentNode.prev = null; // 2nd node points to null.
+          firstNode = currentNode; // Sets firstNode as the 2nd node.
+          numberOfEntries--;
+        } // end if
+      } // end if
+    }
+    catch(EmptyQueueException e)
+    {
+      System.out.println("Exception thrown: " + e);
+    } // end try
+
+    return item;
+  } // end dequeue
+
+  /**  Retrieves the entry at the front of this queue.
+      @return  The object at the front of the queue.
+      @throws  EmptyQueueException if the queue is empty. */
+  public T getFront()
+  {
+    T item = null;
+
+    try
+    {
+      if(isEmpty())
+      {
+        throw new EmptyQueueException();
+      }
+      else
+      {
+        item = firstNode.data;
+      } // end if
+    }
+    catch(EmptyQueueException e)
+    {
+      System.out.println("Exception thrown: " + e);
+    } // end try
+
+    return item;
+  } // end getFront
+
+  /** Detects whether this queue is empty.
+      @return  True if the queue is empty, or false otherwise. */
+  public boolean isEmpty()
+  {
+    return numberOfEntries == 0;
+  } // end isEmpty
+
+  /** Removes all entries from this queue. */
+  public void clear()
+  {
+    if(!isEmpty())
+    {
+      dequeue();
+    }
+  } // end clear
+
+  public T[] toArray()
+  {
+    @SuppressWarnings("unchecked")
+    T[] result = (T[])new Object[numberOfEntries];
+    int index = 0;
+    Node currentNode = lastNode;
+    while((index < numberOfEntries) && (currentNode != null))
+    {
+      result[index] = currentNode.data;
+      index++;
+      currentNode = currentNode.prev;
+    } // end while
+
+    System.out.println("The added items are:");
+    for(int i = 0; i < result.length; i++)
+    {
+      System.out.println("  " + result[i]);
+    }
+    return result;
+  } // end toArray
+
+  /** Private inner class Node */
+  private class Node
+  {
+    private T data;
+    private Node prev; // Link to previous node.
+    /** Creates a node that points to null.
+        @param dataPortion  The data that will be stored in the node. */
+    private Node(T dataPortion)
+    {
+      this(dataPortion, null);
+    } // end constructor
+
+    /** Creates a node that points to another node.
+        @param dataPortion  The data that will be stored in the node.
+        @param nextNode  The next node that will be referenced. */
+    private Node(T dataPortion, Node prevNode)
+    {
+      data = dataPortion;
+      prev = prevNode;
+    } // end constructor
+  } // end of Node
+} // end of SingleLinkedData
