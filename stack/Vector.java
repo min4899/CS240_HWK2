@@ -125,7 +125,7 @@ public final class Vector<T> implements StackInterface<T>
     {
       throw new IllegalStateException("Cannot create a vector stack that exceeds" +
                                       "maximum size of " + MAX_CAPACITY);
-    }
+    } // end if
   } // end checkCapacity
 
   /** Increases the size of vector array by 1. */

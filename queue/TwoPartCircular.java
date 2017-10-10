@@ -137,14 +137,13 @@ public final class TwoPartCircular<T> implements QueueInterface<T>
 
     Node current = new Node(null, null);
     current = free.next;
-    for (int i = 0; i < numberOfNodes; i++)
+    for(int i = 0; i < numberOfNodes; i++)
     {
-      result += current.data + " ";       // Concat next list element
+      result += current.data + " "; // Concat next list element.
       current = current.next;
     } // end for
 
     result += "]";
-    System.out.println(numberOfEntries);
     return result;
   } // end toString
 

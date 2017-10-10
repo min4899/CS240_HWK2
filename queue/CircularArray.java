@@ -116,9 +116,9 @@ public final class CircularArray<T> implements QueueInterface<T>
   {
     String result = "[";
 
-    for (int i = 0; i < queue.length; i++)
+    for(int i = 0; i < queue.length; i++)
     {
-      result += queue[i] + " ";       // Concat next list element
+      result += queue[i] + " "; // Concat next list element.
     } // end for
 
     result += "]";

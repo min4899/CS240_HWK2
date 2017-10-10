@@ -76,26 +76,31 @@ public final class LinkedData<T> implements StackInterface<T>
     } // end while
   } // end clear
 
-  public T[] toArray()
+  /** Returns all entries in an organized string.
+      @return String of all entries. */
+  public String toString()
   {
-    @SuppressWarnings("unchecked")
-    T[] result = (T[])new Object[numberOfEntries];
-    int index = 0;
-    Node currentNode = previousNode;
-    while((index < numberOfEntries) && (currentNode != null))
-    {
-      result[index] = currentNode.data;
-      index++;
-      currentNode = currentNode.prev;
-    } // end while
+    String result = "[";
 
-    System.out.println("The added items are:");
-    for(int i = 0; i < result.length; i++)
+    // Create an array that stores all entries in order.
+    @SuppressWarnings("unchecked")
+    T[] temp = (T[])new Object[numberOfEntries];
+    Node currentNode = previousNode;
+    for(int i = numberOfEntries - 1; i >= 0; i--)
     {
-      System.out.println("  " + result[i]);
-    }
+      temp[i] = currentNode.data;
+      currentNode = currentNode.prev;
+    } // end for
+
+    // Puts array of entries in a string.
+    for(int i = 0; i < numberOfEntries; i++)
+    {
+      result += temp[i] + " "; // Concat next list element.
+    } // end for
+
+    result += "]";
     return result;
-  } // end toArray
+  } // end toString
 
   /** Private inner class Node */
   private class Node

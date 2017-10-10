@@ -44,25 +44,25 @@ public class Demo
     stack2.push('c');
     System.out.println("Added 3 items");
 
-    System.out.println(stack2.peek());
+    System.out.println("Last entry is: " + stack2.peek());
 
     System.out.println("Adding 3 more objects");
     stack2.push('d');
     stack2.push('e');
     stack2.push('f');
 
-    System.out.println(stack2.peek());
+    System.out.println("Last entry is: " + stack2.peek());
 
     stack2.pop();
 
-    System.out.println(stack2.peek());
+    System.out.println("Last entry is: " + stack2.peek());
 
     stack2.clear();
     stack2.push("hello");
-    System.out.println(stack2.peek());
+    System.out.println("Last entry is: " + stack2.peek());
     */
 
-    /*
+
     System.out.println("TESTING LINKED DATA STACK");
     LinkedData stack3 = new LinkedData();
     System.out.println("Created stack 3 linked data");
@@ -71,25 +71,25 @@ public class Demo
     stack3.push('a');
     stack3.push('b');
     stack3.push('c');
-
-    stack3.toArray();
-
+    System.out.println(stack3.toString());
     System.out.println("Top item on stack is: " + stack3.peek());
 
     System.out.println("Deleting top item on stack");
-    stack3.pop();
-    stack3.toArray();
+    System.out.println("Removing: " + stack3.pop());
+    System.out.println("Top item on stack is: " + stack3.peek());
+    System.out.println(stack3.toString());
 
     System.out.println("Adding more items");
     stack3.push('d');
     stack3.push('e');
-    stack3.toArray();
+    System.out.println(stack3.toString());
+    System.out.println("Top item on stack is: " + stack3.peek());
 
     stack3.clear();
 
     stack3.peek();
-    */
 
-    
+
+
   }
 }

@@ -36,7 +36,7 @@ public class Demo
     queue1.enqueue("there");
     System.out.println(queue1.toString());
 
-    System.out.println(queue1.getFront());
+    System.out.println("Front entry is: " + queue1.getFront());
 
     queue1.clear();
     System.out.println(queue1.toString());
@@ -55,10 +55,9 @@ public class Demo
     queue2.enqueue('d');
     queue2.enqueue('e');
     System.out.println("Added 5 items");
-    queue2.toArray();
+    System.out.println(queue2.toString());
+    System.out.println("First item in the queue: " + queue2.getFront());
 
-    System.out.println(queue2.getFront());
-
     System.out.println("Removing first in queue: " + queue2.dequeue());
     System.out.println("New first item in list is: " +queue2.getFront());
     System.out.println("Removing first in queue: " + queue2.dequeue());
@@ -67,6 +66,7 @@ public class Demo
     System.out.println("New first item in list is: " +queue2.getFront());
     System.out.println("Removing first in queue: " + queue2.dequeue());
     System.out.println("New first item in list is: " +queue2.getFront());
+    System.out.println(queue2.toString());
 
     System.out.println("Clearing queue");
     queue2.clear();
@@ -75,8 +75,9 @@ public class Demo
     queue2.enqueue("hello");
     queue2.enqueue("everyone");
     queue2.enqueue("lol");
-    queue2.toArray();
+    System.out.println(queue2.toString());
     */
+
 
     System.out.println("TESING TWOPARTCIRCLAR QUEUE");
     TwoPartCircular queue3 = new TwoPartCircular();
@@ -128,5 +129,6 @@ public class Demo
     System.out.println("Adding: not");
     queue3.enqueue("not");
     System.out.println(queue3.toString());
+
   }
 }
